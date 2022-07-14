@@ -21,6 +21,7 @@
   - [5.3. error: failed to push some refs to <url>](#53-error-failed-to-push-some-refs-to-url)
   - [5.4. OpenSSL SSL_read: Connection was reset, errno 10054](#54-openssl-ssl_read-connection-was-reset-errno-10054)
   - [5.5. fatal: Couldn't find remote ref master](#55-fatal-couldnt-find-remote-ref-master)
+  - [Another git process seems to be running in this repository](#another-git-process-seems-to-be-running-in-this-repository)
 - [6. 参考文档](#6-参考文档)
 
 
@@ -187,6 +188,8 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
 
 初始化本地仓库，把代码的文件夹变成一个仓库，使用`git init`命令，在本地文件夹下，右键打开git bash终端，初始化完成之后，本地文件夹下会生成.git文件；
 
+注意：提交到远程仓库之前，要确保工作区中的代码提交到了本地
+
   ```shell
   git init 
   ```
@@ -217,7 +220,7 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
 
   ```
 
-  ### 4.5. 常用命令
+### 4.5. 常用命令
   
   ```shell
   # 查看修改的内容
@@ -226,7 +229,7 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
   # 添加文件
   git add
 
-  git commit -
+  git commit -a -m 
 
   git restore 
   # (use "git add/rm <file>..." to update what will be committed)
@@ -294,6 +297,11 @@ git config --global http.sslVerify "false"
 
 ### 5.5. fatal: Couldn't find remote ref master
 
+### Another git process seems to be running in this repository
+
+根据我们所了解到的，windows对于进程的同步互斥管理，是有资源上锁机制的。猜测这里肯定是有进程对某资源进行了加锁，但是由于进程突然崩溃，未来得及解锁，导致其他进程访问不了。
+
+根据提示，打开文件夹选项，打开显示隐藏文件，进入工作区目录下的隐藏文件.git，其中的index.lock文件删除掉;
 
 ## 6. 参考文档
 
