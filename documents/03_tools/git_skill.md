@@ -46,13 +46,13 @@ Git作为一个版本管理工具，我们只要听到它是由Linus Torvalds(Li
 
 一个被git管理的项目，在本地的文件夹目录下，会有一个固定的目录格式，我们先从这个目录结构说起，整个文件夹为***工作目录***，.git文件夹为**Git目录**，Git文件之外的**工作目录**；如下图所示；
 
-<img src="C:\Users\mnzho\AppData\Roaming\Typora\typora-user-images\image-20220711224524701.png" alt="image-20220711224524701" style="zoom:50%;" />
+<img src="image/image-20220711224524701.png" alt="image-20220711224524701" style="zoom:70%;" />
 
 **Git目录**
 
 Git目录是项目存储所有历史和元信息的目录 - 包括所有的对象(***commits,trees,blobs,tags***)，每一个项目只能有一个'Git目录，下面我们来具体看看Git目录中有哪些信息；
 
-<img src="C:\Users\mnzho\AppData\Roaming\Typora\typora-user-images\image-20220711225036692.png" alt="image-20220711225036692" style="zoom:50%;" />
+<img src="image/git_catalogue.png" alt="image-20220711225036692" style="zoom:50%;" />
 
 > Git目录中有5个核心文件既文件夹，config，objects，HEAD，index，refs ；
 
@@ -93,7 +93,7 @@ refs目录下面是一些纯文本文件，分别记录着本地分支和远程�
 
 下图描述了 git 对象的在不同的生命周期中不同的存储位置，通过不同的 git 命令改变 git 对象的存储生命周期
 
-<img src="D:\code\doc\zgdoc-technology\documents\03_tools\image\git_sate" style="zoom:80%;" />
+<img src="git_status.svg" style="zoom:100%;" />
 
 **工作区 (workspace)**
 就是我们当前工作空间，也就是我们当前能在本地文件夹下面看到的文件结构。初始化工作空间或者工作空间 clean 的时候，文件内容和 index 暂存区是一致的，随着修改，工作区文件在没有 add 到暂存区时候，工作区将和暂存区是不一致的；
@@ -207,7 +207,7 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
   git branch -M main
   ```
 
-- 推送代码到main分支
+- 推送代码推送到远程main分支
 
   ```shell
   git push -u origin main
@@ -218,11 +218,11 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
   git remote add origin https://github.com/mnzhouguo/zgdoc-technology.git
   git branch -M main
   git push -u origin main
-
+  
   ```
 
 ### 4.5. 常用命令
-  
+
   ```shell
   # 查看修改的内容
   git status
@@ -245,7 +245,7 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
 $ git remote -v
 # 直接拉取远程分支最新代码并合并最新代码到本地当前分支
 $ git pull origin master    `**⽰例：拉取远端origin/master分⽀合并到本地当前分⽀**`
-``` 
+```
 
 ### 4.7. 基于master创建新分支
 在已经克隆下来的本地项目的文件夹目录中，空白处，点击鼠标右键，选择Git Bash Here，打开git命令窗口。
@@ -276,14 +276,14 @@ git pull
 ### 5.1. git Failed to connect to github.com port 443
 -[2] to include in what will be committed
 ### 5.2. error: src refspec main does not match any
-  
+
 ### 5.3. error: failed to push some refs to <url>
 **产生原因：**
 
 When multiple developers work on the same branch, it can cause a sequencing issue in Git. A commit gets rejected and causes a failed to push some refs to error because the remote branch contains code that you do not have locally. What this means is that your local git repository is not compatible with the remote origin.
 
  >参考： https://komodor.com/learn/how-to-fix-failed-to-push-some-refs-to-git-errors/#:~:text=failed%20to%20push%20some%20refs%20to%20errors%20are%20often%20caused,sync%20with%20the%20Git%20repository.
-  
+
 ### 5.4. OpenSSL SSL_read: Connection was reset, errno 10054
 
 **产生原因：**
