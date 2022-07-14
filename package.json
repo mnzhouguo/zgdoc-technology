@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zg/awesome-fenix.git"
+    "url": "git+https://github.com/mnzhouguo/zgdoc-technology.git"
   },
   "author": "icyfenix@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zg/awesome-fenix/issues"
+    "url": "https://github.com/mnzhouguo/zgdoc-technology/issues"
   },
   "homepage": "https://github.com/zg/awesome-fenix#readme",
   "devDependencies": {
