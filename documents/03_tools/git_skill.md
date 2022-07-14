@@ -226,6 +226,9 @@ git config --global user.email ["378046832@qq.com"](mailto:\)
   # 添加文件
   git add
 
+  git commit -
+
+  git restore 
   # (use "git add/rm <file>..." to update what will be committed)
   # (use "git restore <file>..." to discard changes in working directory)
 
